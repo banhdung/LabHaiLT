@@ -51,13 +51,11 @@ public class JSH208 {
             n = n / 10;
         }
         // 1234567 7 6 5 4 3 2 1
-        System.out.println(list.toString());
         for (int i = 0; i < list.size() - 1; i += 2) {
             int tg = list.get(i);
             list.set(i, list.get(i + 1));
             list.set(i + 1, tg);
         }
-       System.out.println(list.toString());
          // 6 7 4 5 2 3 1 
         int x = 1;
         for (Integer item : list) {
