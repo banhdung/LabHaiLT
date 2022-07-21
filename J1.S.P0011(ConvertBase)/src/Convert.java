@@ -30,37 +30,14 @@ public class Convert {
         }
         System.out.println();
         int radix = inputInt(mess, 1, radixs.length);
-        switch (radix) {
-            case 1:
-                radix = 2;
-                break;
-            case 2:
-                radix = 8;
-                break;
-            case 3:
-                radix = 10;
-                break;
-            case 4:
-                radix = 16;
-                break;
-        }
-        return radix;
+        int []radixInt = {2,8,10,16};
+        return radix = radixInt[radix-1]; //Chon 1 : Binary thi luc nay radix = radixInt[0] = 2
     }
 
     private static String getRegex(int radix) {
-        switch (radix) {
-            case 2:
-                return "[0-1]+";
-            case 8:
-                return "[0-7]+";
-            case 10:
-                return "[0-9]+";
-            case 16:
-                return "[0-9A-F]+";
-            default:
-                System.err.println("Invalid radix!");
-                return null;
-        }
+         String s = "0123456789ABCDEF";
+         return "["+s.substring(0, radix)+"]"+"+";
+      
     }
 
     public static String inputNumber(String mess, int radix) {
